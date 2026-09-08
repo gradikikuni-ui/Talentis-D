@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Thème sombre (par défaut) */
+  --ink-950: 5 7 12;
+  --ink-900: 11 15 23;
+  --ink-800: 18 24 38;
+  --ink-700: 26 34 51;
+  --mist-100: 245 247 250;
+  --mist-200: 228 232 240;
+  --mist-300: 199 206 221;
+  --mist-400: 148 160 184;
+  --mist-500: 107 118 144;
+  --line: 255 255 255;
+}
+
+html.light {
+  --ink-950: 245 247 250;
+  --ink-900: 255 255 255;
+  --ink-800: 255 255 255;
+  --ink-700: 228 232 240;
+  --mist-100: 11 15 23;
+  --mist-200: 26 34 51;
+  --mist-300: 71 85 105;
+  --mist-400: 100 116 139;
+  --mist-500: 148 160 184;
+  --line: 15 23 42;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-ink-950 text-mist-100 font-body antialiased transition-colors duration-200;
+  }
+  h1, h2, h3, h4 { @apply font-display; }
+  ::selection { @apply bg-cyan-300/30; }
+  :focus-visible {
+    outline: 2px solid #3DDBFF;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  .eyebrow { @apply font-mono text-xs uppercase tracking-[0.2em] text-cyan-400; }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-signal-gradient
+           px-6 py-3 font-display font-semibold text-ink-950 shadow-glow
+           transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-line/15
+           bg-line/5 px-6 py-3 font-display font-semibold text-mist-100
+           transition-colors duration-200 hover:border-cyan-400/40 hover:bg-line/10;
+  }
+  .card { @apply rounded-xl2 border border-line/5 bg-ink-800 p-6 shadow-card; }
+  .input-field {
+    @apply w-full rounded-lg border border-line/10 bg-ink-900/40 px-4 py-2.5 text-sm
+           text-mist-100 outline-none placeholder:text-mist-500 focus:border-cyan-400/50;
+  }
+  .badge { @apply rounded-full border px-3 py-1 text-xs font-medium; }
+}
