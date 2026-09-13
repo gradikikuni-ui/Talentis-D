@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import RoleToggle from "../components/RoleToggle";
-import Button from "../components/Button";
 import Logo from "../components/Logo";
 
 const EMPTY_WORKER = { email: "", password: "", full_name: "", title: "", location: "", skills: "" };
@@ -63,9 +62,9 @@ export default function Register() {
           <Field label="Localisation" value={worker.location} onChange={(v) => setWorker({ ...worker, location: v })} placeholder="Localisation" />
           <Field label="Compétences" value={worker.skills} onChange={(v) => setWorker({ ...worker, skills: v })} placeholder="Compétences" />
 
-          <Button type="submit" disabled={loading} className="mt-2">
+          <button type="submit" disabled={loading} className="btn-primary w-full mt-2">
             {loading ? "Création…" : "Créer mon compte"}
-          </Button>
+          </button>
         </form>
       )}
 
