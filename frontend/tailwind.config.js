@@ -22,7 +22,7 @@ export default {
         signal: { mint: "#34D399", coral: "#FB7185" },
       },
       fontFamily: {
-        display: ["'Space Grotesk'", "sans-serif"],
+        display: ["'IBM Plex Sans'", "sans-serif"],
         body: ["'Inter'", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
       },
