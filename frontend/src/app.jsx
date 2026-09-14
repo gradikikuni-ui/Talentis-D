@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import JobsList from "./pages/JobsList";
 import JobDetail from "./pages/JobDetail";
 import EmployerContact from "./pages/EmployerContact";
+import About from "./pages/About";
 import WorkerDashboard from "./pages/WorkerDashboard";
 import EmployerDashboard from "./pages/EmployerDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/offres" element={<JobsList />} />
           <Route path="/offres/:jobId" element={<JobDetail />} />
           <Route path="/entreprises/contact" element={<EmployerContact />} />
+          <Route path="/a-propos" element={<About />} />
           <Route path="/travailleur" element={<ProtectedRoute requireRole="worker"><WorkerDashboard /></ProtectedRoute>} />
           <Route path="/entreprise" element={<ProtectedRoute requireRole="employer"><EmployerDashboard /></ProtectedRoute>} />
           <Route path="/admin" element={<ProtectedRoute requireRole="admin"><AdminDashboard /></ProtectedRoute>} />
