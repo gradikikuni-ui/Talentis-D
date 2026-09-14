@@ -30,6 +30,9 @@ export default function Navbar() {
           <NavLink to="/offres" className={({isActive}) => isActive ? "text-mist-100" : "hover:text-mist-100"}>
             Offres
           </NavLink>
+          <NavLink to="/a-propos" className={({isActive}) => isActive ? "text-mist-100" : "hover:text-mist-100"}>
+            À propos
+          </NavLink>
           {isAuthenticated && (
             <NavLink to={spaceLink} className={({isActive}) => isActive ? "text-mist-100" : "hover:text-mist-100"}>
               {session?.activeRole === "admin" ? "Administration" : "Mon espace"}
