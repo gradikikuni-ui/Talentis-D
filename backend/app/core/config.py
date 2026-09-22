@@ -22,9 +22,9 @@ class Settings(BaseSettings):
 
     # CORS - origines autorisées pour le front React
     CORS_ORIGINS: list[str] = [
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ]
+    "http://localhost:5173",
+    "https://shiny-parakeet-5g65wgrvjjwqf7gv5-5173.app.github.dev",
+]
 
     # Notification email lors d'une nouvelle demande de contact employeur.
     # Avec Gmail : SMTP_HOST=smtp.gmail.com, SMTP_PORT=587, SMTP_USERNAME=votre
@@ -41,4 +41,6 @@ class Settings(BaseSettings):
         env_file = ".env"
 
 
+
 settings = Settings()
+print("CORS_ORIGINS chargé:", settings.CORS_ORIGINS)
